@@ -1,0 +1,48 @@
+<% layout('layouts/boilerplate') %>
+<div class="container d-flex justify-content-center align-items-center mt-5">
+    <div class="row">
+        <!-- <div class="col-md-6 col-xl-4 offset-xl-4"> -->
+            <div class="card shadow">
+                <img src="https://images.unsplash.com/photo-1527948887395-a2996a5aad43?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8aW5kaWFuJTIwcm9hZHN8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">Register</h5>
+                    <form action="/register" method="POST" novalidate class="validated-form">
+                        <div class="mb-3">
+                            <label class="form-label" for="username">Username</label>
+                            <input class="form-control" type="text" id="username" placeholder="Enter Username" name="username" autofocus required>
+                            <div class="valid-feedback">
+                                Great work! Fine!
+                            </div>
+                            <div class="invalid-feedback">
+                                Please provide username!!!!!
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="email">Email</label>
+                            <input class="form-control" type="email" id="email" placeholder="Enter email" name="email" required>
+                            <div class="valid-feedback">
+                                Great work! Fine!
+                            </div>
+                            <div class="invalid-feedback">
+                                Please provide email!!!!!
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="password">Password</label>
+                            <input class="form-control" type="password" id="password" placeholder="Enter password" name="password" required>
+                            <div class="valid-feedback">
+                                Great work! Fine!
+                            </div>
+                            <div class="invalid-feedback">
+                                Please provide a password!!!!!
+                            </div>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button class="btn btn-success">Register</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        <!-- </div> -->
+    </div>
+</div>

@@ -1,0 +1,74 @@
+<% layout('layouts/boilerplate') %>
+<div class="row">
+    <h1 class="text-center">New Complaint</h1>
+    <div class="col-md-6 offset-md-3">
+        <form action="/complaints" method="POST" novalidate class="validated-form" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label class="form-label" for="title">Title</label>
+                <input class="form-control" type="text" id="title" placeholder="Enter the Title" name="title" required>
+                <div class="valid-feedback">
+                    Great work! Fine!
+                </div>
+                <div class="invalid-feedback">
+                    Please provide a title!!!!!
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="location">Location</label>
+                <input class="form-control" type="text" id="location" placeholder="Enter Location" name="location" required>
+                <div class="valid-feedback">
+                    Great work! Fine!
+                </div>
+                <div class="invalid-feedback">
+                    Please provide a location!!!!!
+                </div>
+            </div>
+            
+            <!-- <div class="mb-3">
+                <label class="form-label" for="image">Image URL</label>
+                <input class="form-control" type="text" id="image" placeholder="Enter Image URL" name="image" required>
+                <div class="valid-feedback">
+                    Great work! Fine!
+                </div>
+                <div class="invalid-feedback">
+                    Please provide an image url!!!!!
+                </div>
+            </div> -->
+            <div class="mb-3">
+                <label class="form-label" for="description">Description </label>
+                <textarea class="form-control" type="text" id="description" placeholder="Description" name="description" required></textarea>
+                <div class="valid-feedback">
+                    Great work! Fine!
+                </div>
+                <div class="invalid-feedback">
+                    Please provide a description!!!!!
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="category">Select Category</label>
+                <select class="form-select" name="category" id="category">
+                    <% for(let category of categories) { %>
+                        <option value="<%=category%>"><%=category%></option>
+                    <% } %> 
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" for="image">Upload Images</label>
+                <input type="file" class="form-control" id="image" name="image" multiple>
+                <!-- <label class="input-group-text" for="image">Upload</label> -->
+            </div>
+
+            <div class="d-grid gap-2 col-6 mx-auto my-auto">
+                <button class="btn btn-success">Submit</button>
+            </div>
+        </form>
+        <br>
+            <a href="/complaints" style="text-decoration: none">
+                <div class="d-grid gap-2 col-6 mx-auto my-auto">
+                    <button class="btn btn-danger">Cancel</button>
+                </div>
+            </a>
+        <br>
+    </div>
+</div>

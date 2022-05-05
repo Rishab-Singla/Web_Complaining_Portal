@@ -1,0 +1,45 @@
+<% layout('layouts/boilerplate') %>
+
+<div id="cluster-map"></div>
+
+<h1><%=category%> Complaints!!!!</h1>
+<div>
+    <a href="/complaints/new">Add a new Complaint</a>
+</div>
+<div>
+    <% if(category!=='All') { %> 
+        <a href="/complaints">All Complaints</a>
+    <% } %>
+</div>
+
+    <% for(let complaint of complaints) { %>
+    <div class="card mb-3">
+        <div class="row">
+            <div class="col-md-4">
+                <% if(complaint.images.length) { %> 
+                    <img src="<%= complaint.images[0].url %> " class="img-fluid" alt="">
+                <% } else { %>
+                    <img src="https://res.cloudinary.com/dcaywhic4/image/upload/v1618585610/Complaining_Project/zvhytymhvzd51mnb13q9.jpg" class="img-fluid" alt="">
+                <% } %> 
+            </div>
+
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title"><%= complaint.title %> </h5>
+                    <p class="card-text"><%= complaint.description %> </p>
+                    <p class="card-text">
+                        <small class="text-muted"><%= complaint.location %> </small>
+                    </p>
+                    <a href="/complaints/<%=complaint._id%>" class="btn btn-info">View More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+<% } %> 
+
+<script>
+    const mapToken = '<%-process.env.MAPBOX_TOKEN%>';
+    const complaints = {features : <%- JSON.stringify(complaints) %>}
+</script>
+
+<script src="/javascripts/clusterMap.js"></script>
