@@ -7,3 +7,4 @@
 6. Used Mapbox Token tool for maps showing the real time density of users' complaints at various locations.
 7. Users can review and give ratings to other users' complaints, for checking the validity of issues.
 Main Technologies used: NodeJS, Express, MongoDB.
+![Screenshot (195)](https://user-images.githubusercontent.com/75562596/170254291-6be02b23-d702-46d5-afb8-49e6af8536e2.png)
